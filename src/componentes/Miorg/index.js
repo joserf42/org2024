@@ -1,21 +1,21 @@
 import { useState } from "react"
 import "./MiOrg.css"
-const MiOrg = () =>{
+const MiOrg = (props) => {
     //Estado -hooks
     //useState => debemos import UseState
-    // Función useState()
-
-    console.log()
     //const [nombreVariable, funcionActualizar] = useState(valorInicial)
-    const [nombre, actualizarNombre] = useState("Jose")
+    console.log(props)
+    //const [mostrar, actualizarMostrar] = useState(true)
+    // Función ManejarClick estado del componente Mostrar/Ocultar elemento 
+    //const ManejarClick = () => {
+    //    console.log("Mostrar/Ocultar elemento", !mostrar)
+    //    actualizarMostrar(!mostrar)
+    //}
+    
 
-    /* Función ManejarClick estado del componente Mostrar/Ocultar elemento */
-    const ManejarClick = () => {
-        console.log("Mostrar/Ocultar elemento")
-    }
     return <section className="orgSection">
-        <h3 className="title">Mi Organización {nombre}</h3>
-        <img src="./img/add.png" alt="Add Formulario Org" onClick={ManejarClick} />
+        <h3 className="title">Mi Organización</h3>
+        <img src="./img/add.png" alt="Add Formulario Org" onClick={props.cambiarMostrar} />
     </section>
 }
 
