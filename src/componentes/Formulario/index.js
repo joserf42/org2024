@@ -6,17 +6,20 @@ import Boton from "../Boton"
 
 const Formulario = () => {
 
-    const [nombre, actualizarNombre] = useState("")
-    const [puesto, actualizarPuesto] = useState("")
-    const [foto, actualizarFoto] = useState("")
+    const [nombre, actualizarNombre] = useState("") //Estado 1
+    const [puesto, actualizarPuesto] = useState("") //Estado 2
+    const [foto, actualizarFoto] = useState("") //Estado 3
+    const [equipo, actualizarEquipo] = useState("")
 
     const manejarEnvio = (e) => {
         e.preventDefault()
         console.log("manejar Envio")
+        
         let datosAEnviar = {
             nombre,
             puesto,
-            foto
+            foto,
+            equipo
         }
         console.log(datosAEnviar)
         
@@ -26,7 +29,7 @@ const Formulario = () => {
         <form onSubmit={manejarEnvio}>
             <h2>Rellena el formulario para crear el equipo.</h2>
             <CampoTexto 
-                titulo="Nombre" 
+                titulo="Nombre" // Estados vinculados a sus respectivos inputs estado1=nombre
                 placeholder="Ingresar nombre" 
                 required valor={nombre} 
                 actualizarValor={actualizarNombre} 
@@ -45,7 +48,11 @@ const Formulario = () => {
                 actualizarValor={actualizarFoto} 
             
             />
-            <ListaOpciones />
+            <ListaOpciones 
+                valor={equipo}
+                actualizarEquipo={actualizarEquipo}
+            
+            />
             <Boton>
                 crear
             </Boton>
