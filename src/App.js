@@ -19,6 +19,7 @@ function App() {
       foto: "https://github.com/harlandlohora.png",
       nombre: "Harland Lohora",
       puesto: "Instructor",
+      fav: true
       
     },
     {
@@ -26,15 +27,16 @@ function App() {
       equipo: 'Programación',
       foto: "https://github.com/JeanmarieAluraLatam.png",
       nombre: "Jean Marie",
-      puesto: "Instructora"
-      
+      puesto: "Instructora",
+      fav: false
     },
     {
       id: uuid(),
       equipo: 'Programación',
       foto: "https://github.com/christianpva.png",
       nombre: "Christian Velasco",
-      puesto: "Instructor"
+      puesto: "Instructor",
+      fav: false
       
     },
     {
@@ -243,7 +245,24 @@ function App() {
     actualizarEquipos(equiposActualizados)
   }
 
-  
+  // Función Crear un equipo 
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo)
+    actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid() }])
+  }
+
+  // Función de like
+  const like = (id) => {
+     console.log ("like", id)
+     const colaboradoresActualizados = colaboradores.map((colaborador) => {
+      if(colaborador.id === id) {
+        colaborador.fav = !colaborador.fav
+      }
+      return colaborador
+     })
+
+     actualizarColaboradores(colaboradoresActualizados)
+  }
 
   return (
     <div >
@@ -254,6 +273,8 @@ function App() {
         mostrarFormulario && <Formulario 
         equipos={equipos.map((equipo) => equipo.titulo)}
         registrarColaborador={registrarColaborador}
+        crearEquipo={crearEquipo}
+
         
       />
 
@@ -267,6 +288,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador={eliminarColaborador}
           actualizarColor={actualizarColor}
+          like={like}
           />
         )
 
