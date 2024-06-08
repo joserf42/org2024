@@ -26,3 +26,17 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+/* Mobile */
+@media screen and (max-width: 375px) {
+    .equipo h3 {
+        font-size: 24px;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .equipo h3 {
+        font-size: 26px;
+    }
+}

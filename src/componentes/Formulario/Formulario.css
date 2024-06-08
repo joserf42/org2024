@@ -20,3 +20,48 @@
     font-weight: 400;
     color: #212121;
 }
+
+/* Mobile */
+@media screen and (min-width: 375px) {
+    .formulario form {
+        padding: 8px 45px;
+    }
+
+    .formulario h2 {
+        font-size: 20px;
+        font-weight: 200;
+
+    }
+
+    .formulario .boton {
+
+        display: flex;
+        justify-content: center;
+        margin: 22px 0
+    }
+
+
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .formulario form {
+        padding: 8px 100px;
+    }
+
+    .formulario h2 {
+        font-size: 22px;
+        font-weight: 200;
+
+    }
+
+    .formulario .boton {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        margin: 24px 0
+    }
+
+
+}

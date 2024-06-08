@@ -26,3 +26,29 @@
     height: 40px;
     padding: 5px 20px;
 }
+
+/* Mobile */
+@media screen and (max-width: 375px) {
+    .campo label {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .campo input {
+        padding: 14px 6px;
+        font-size: 12px;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .campo label {
+        font-size: 14px;
+    }
+
+    .campo input {
+        padding: 16px 8px;
+        font-size: 12px;
+    }
+}
